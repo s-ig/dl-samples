@@ -41,9 +41,9 @@ def plot(x,y):
 #モデルを生成
 def build_model(hidden_units_num,lr):
     model = Sequential()
-    model.add(Dense(hidden_units_num,input_shape=(1,), activation='tanh'))#中間層
-    model.add(Dense(1, activation='linear'))#出力層
-    model.compile(loss='mse',optimizer=tf.keras.optimizers.Adam(lr))
+    model.add(Dense(hidden_units_num,input_shape=(1,), activation="tanh"))#中間層
+    model.add(Dense(1, activation="linear"))#出力層
+    model.compile(loss="mse",optimizer=tf.keras.optimizers.Adam(lr))
     return model
 
 
