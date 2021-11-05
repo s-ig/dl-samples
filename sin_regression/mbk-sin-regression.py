@@ -1,9 +1,8 @@
 import numpy as np
 import matplotlib.pyplot as plt
-import keras
 from keras.models import Sequential
 from keras.layers import Dense
-import tensorflow as tf
+from keras.optimizers import adam
 
 TRAINING_DATA_LENGTH=2056
 HIDDEN_UNITS_NUM=16
@@ -43,7 +42,7 @@ def build_model(hidden_units_num,lr):
     model = Sequential()
     model.add(Dense(hidden_units_num,input_shape=(1,), activation="tanh"))#中間層
     model.add(Dense(1, activation="linear"))#出力層
-    model.compile(loss="mse",optimizer=tf.keras.optimizers.Adam(lr))
+    model.compile(loss="mse",optimizer=adam(lr))
     return model
 
 
